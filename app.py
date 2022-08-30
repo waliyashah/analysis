@@ -110,7 +110,7 @@ Msg_counts = pd.DataFrame(msg)
 
 def main():
     st.title('SMS Web App')
-    image = Image.open('E:/image.jpg')
+    image = Image.open('image.jpg')
     st.image(image, use_column_width = True)
     st.header('Created by: Waliya Shah ')
     sm = st.selectbox('pleae Select Message type:' ,['Spam' , 'Non_Spam'])
