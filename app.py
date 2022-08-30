@@ -94,7 +94,7 @@ for Message_updated in df1['Message_updated'].values:
     for word in Message_updated.split():
         cnt[word] += 1
 sc = cnt.most_common(15)        
-spam_count = pd.DataFrame(sc, columns = ['KeyWords' , 'Counts'])
+spam_count = pd.DataFrame(sc, columns = ['KeyWords' , 'Counts']).sort_values('Counts', ascending=1)
 
 #Extract the most common keywords of Non_spam messages
 cnt = Counter()
@@ -102,7 +102,7 @@ for Message_updated in df2['Message_updated'].values:
     for word in Message_updated.split():
         cnt[word] += 1        
 nsc =  cnt.most_common(15)
-nspam_count = pd.DataFrame(nsc ,columns=['KeyWords','Counts'])
+nspam_count = pd.DataFrame(nsc ,columns=['KeyWords','Counts']).sort_values('Counts', ascending=1)
 
 #Number of Messages Received over Date
 msg =df.groupby('Date_Received')['Message_updated'].count() 
