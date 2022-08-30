@@ -14,7 +14,7 @@ from PIL import Image
 pd.options.mode.chained_assignment = None  #handling arnings by pandas dataframe
 
 #read data
-df= pd.read_csv("C:/Users/ahmed pc/Data Science/Assignment Text Analysis/SMS_data.csv", encoding = 'unicode_escape')
+df= pd.read_csv("SMS_data.csv", encoding = 'unicode_escape')
 df['Message_body'] = df['Message_body'].astype(str) #type string 
 #Lower casing
 df['Message_updated'] = df['Message_body'].str.lower()
